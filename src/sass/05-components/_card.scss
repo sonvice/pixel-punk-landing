@@ -1,0 +1,59 @@
+@use '../01-abstracts/' as b;
+
+@property --angle{
+syntax: "<angle>";
+initial-value: 0deg;
+inherits: false;
+}
+
+.card{
+    container-type: inline-size; /* Observa solo el ancho del contenedor */
+    align-self: end;
+    padding: 1px;
+    min-height: b.px-to-rem(328px);
+    z-index: 1;
+    &__gradient{
+        inset: 0;
+     
+    }
+    &__transparent{
+        border: 2px solid var(--primary-color);
+        background-color: hsla(var(--white-hsla), 0.1);
+        backdrop-filter: blur(10px);
+        z-index: -1;
+        inset: 0;
+        @include b.breakpoint(lg){
+            border: none;
+        }
+    }
+    
+    &__border{
+        @include b.breakpoint(lg){
+            inset: 0;
+            clip-path: url(#rect1);
+            z-index: 1;
+    
+    }
+    }
+
+    &__box{
+        flex-wrap: nowrap;
+        --gutter:var(--space-m);
+        --vertical-alignment:stretch;
+    }
+
+    &__img{
+        flex-shrink: 0;
+        & img{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @container (max-width:520px){
+        &__box{
+            flex-wrap: wrap;
+        }
+    
+    }
+}

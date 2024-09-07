@@ -1,0 +1,10 @@
+.number{
+    padding: 1px;
+    &__box{
+        background-color: hsla(var(--gray-dark),1) ;
+        flex-direction: column;
+        --vertical-alignment:center;
+        --horizontal-alignment:center;
+        height: 100%;
+    }
+}

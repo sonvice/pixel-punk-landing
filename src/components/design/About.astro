@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import { aboutNumber } from "@constants/index";
+import { futurisRobot, futurisRobotListening, joinRevolution } from "@assets/index";
+import Section from '@components/Secction.astro';
+import ListNumber from "@components/ListNumber.astro";
+import Card from "@components/Card.astro";
+import Union from "@assets/Union.astro";
+---
+
+<section class="about | relative border-horizontal">
+  <div class="container">
+    <Section>
+      <div class="about__grid1 | pt-space-3xl d-grid">
+  
+          <div class="about__text1 | flow" data-aos="fade-zoom-in">
+            <h2 class="fw-700">
+              Where <span class="gradient-text">Neon Fantasies & Virtual</span>
+              
+               Nightmares <br /> Converge.
+            </h2>
+            <p>A realm where advanced technology meets dystopian reality. Our website is your gateway to a universe of neon lights, gritty streets, and cybernetic enhancements. Explore the high-tech, low-life world where the lines between humanity and machinery blur.</p>
+              
+            <ListNumber data={aboutNumber}/>
+
+          </div>
+          <div class="about__img1 d-flex relative gradient-black fadeIn">
+              <Image src={futurisRobot} quality={90} alt="Futuris Robot" 
+              widths={[240,540,futurisRobot.width / 2]}
+              sizes={`(max-width: 360px) 240px, (min-width: 720px) 540px, ${futurisRobot.width/2}px` }
+              />
+          </div>
+      </div>
+      <!-- Block 2 -->
+      <div class="about__grid2 | pb-space-3xl pt-space-l">
+          <div class="relative gradient-black fadeIn">
+              <Image src={futurisRobotListening} quality={90} alt="Futuris Robot Listening" 
+              widths={[240,540,futurisRobotListening.width / 2]} 
+              sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, ${futurisRobotListening.width/2}px`}/>
+          </div>
+          <div class="about__text2 | flow" data-aos="fade-zoom-in">
+              <h2 class="fw-700">Reveal <span class="gradient-text">the Mysteries of the</span> Cyberspace Realm</h2>
+              <p>A realm where advanced technology meets dystopian reality. Our website is your gateway to a universe of neon lights, gritty streets, and cybernetic enhancements. </p>
+
+              <Card content="Explore the high-tech, low-life world where the lines between humanity and machinery blur." image={joinRevolution} subTitle="Join the Revolution"></Card>
+
+          </div>
+      </div>
+      <Fragment slot="union">
+        <Union fill="var(--primary-color)" class:list={"union-l absolute"} />
+        <Union fill="var(--secondary-color)" class:list={"union-r absolute"} />
+      </Fragment>
+    </Section>
+  </div>
+</section>

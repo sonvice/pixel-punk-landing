@@ -1,0 +1,19 @@
+---
+interface Props{
+    theme:string;
+    class?:string;
+
+}
+
+const {theme,class:className} = Astro.props
+---
+
+<li class="theme__item | theme-toggle">
+  <button class:list={`theme__btn | rounded py-space-2xs px-space-s `} data-theme={theme}>
+    <span class="capitalize size--1 fw-400">{theme}</span>
+    <span class="theme__palette | d-flex">
+      <span class="theme__primary rounded-full"></span>
+      <span class="theme__secondary rounded-full"></span>
+    </span>
+  </button>
+</li>

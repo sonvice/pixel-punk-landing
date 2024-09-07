@@ -1,0 +1,61 @@
+@use '../01-abstracts/'as b;
+
+.faqs{
+
+    & h2{
+        max-width: 15ch;
+        text-wrap: pretty;
+    }
+
+    &__list{
+        display: grid;
+        gap: var(--space-l);
+        justify-content: center;
+        align-items: end;
+        list-style: none;
+        counter-reset: item-counter; 
+        padding-left: 0;
+        @include b.breakpoint(md){
+            grid-template-columns: 1fr 1fr;
+        }
+        @include b.breakpoint(lg){
+          
+        }
+        & li{
+            position: relative;
+            padding-left: var(--space-2xl);
+            @include b.breakpoint(md){
+          
+                
+            }
+            @include b.breakpoint(lg){
+                padding-left: 7.5rem;
+            
+            }
+            &::before {
+                counter-increment: item-counter; /* Incrementa el contador en 1 */
+                content: counter(item-counter, decimal-leading-zero) "."; /* Muestra el número con dos dígitos seguido de un punto */
+                position: absolute;
+                line-height: 1;
+                left: 0;
+                font-size: var(--size-2);
+                color: var(--primary-color); /* Color por defecto, que luego puedes personalizar */
+                font-weight: 700;
+                font-family: var(--ff-orbitron);
+                -webkit-text-fill-color: transparent;
+                background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+                -webkit-background-clip: text;
+                @include b.breakpoint(lg){
+                   
+                    font-size: var(--size-4);
+                }
+              }
+        }
+        & h3{
+            font-family: var(--ff-orbitron);
+            text-wrap: wrap;
+            max-width: 33ch;
+            font-size: var(--size-1);
+        }
+    }
+}

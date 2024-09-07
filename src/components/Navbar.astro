@@ -1,0 +1,102 @@
+---
+import { navigation } from "@constants/index";
+import Button from "@components/Button.astro";
+import { Icon } from "astro-icon/components";
+import Section from "@components/Secction.astro";
+import Union from "@assets/Union.astro";
+---
+
+<header class="navbar | relative">
+  <div class="container">
+    <Section>
+      <div class="navbar__box | py-space-xl relative d-flex">
+        <strong class="size-1 gradient-text">Neo.AI</strong>
+        <nav class="d-flex rounded" id="nav">
+          {
+            navigation.map((item) => (
+              <a
+                href={item.url}
+                class="py-space-2xs size-0 px-space-xs capitalize relative decoration fw-500 text-white"
+              >
+                {item.title}
+              </a>
+            ))
+          }
+        </nav>
+        <div class="navbar__palette d-flex">
+
+          <Button text="Get started free" type="primary" />
+          <button class="btn-theme | rounded-full p-space-2xs" aria-expanded="false">
+            <Icon name="palette" size={24} color="var(--white)" />
+          </button>
+        </div>
+        <button class="burger">
+          <Icon name="burger" size={32} />
+        </button>
+      </div>
+      <Fragment slot="union">
+        <Union fill="var(--primary-color)" class:list={"union-l absolute"} />
+        <Union fill="var(--secondary-color)" class:list={"union-r absolute"} />
+      </Fragment>
+    </Section>
+  </div>
+</header>
+
+<script type="module">
+  import ScrollPadlock from "./node_modules/scroll-padlock/dist/es/scroll-padlock.min.js";
+  const scrollPadlock = new ScrollPadlock();
+
+  const burger = document.querySelector(".burger");
+  const nav = document.getElementById("nav");
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("nav-visible");
+    if (nav.classList.contains("nav-visible")) {
+      document.scrollingElement.classList.add("scroll-padlock-locked");
+    } else {
+      document.scrollingElement.classList.remove("scroll-padlock-locked");
+    }
+  });
+
+  /* Btn Theme */
+  // Selecciona el botón basado en su clase
+  const themeToggleButton = document.querySelector(".btn-theme");
+
+  // Añadir evento de clic al botón
+  themeToggleButton.addEventListener("click", () => {
+    // Obtén el valor actual de aria-expanded
+    const isExpanded =
+      themeToggleButton.getAttribute("aria-expanded") === "true";
+
+    // Cambiar el valor de aria-expanded al hacer clic
+    themeToggleButton.setAttribute("aria-expanded", !isExpanded);
+
+    // Seleccionar el elemento con la clase "theme"
+    const themeElement = document.querySelector(".theme");
+
+    // Añadir o quitar la clase "is-open" basado en el estado de aria-expanded
+    if (!isExpanded) {
+      themeElement.classList.add("is-open");
+    } else {
+      themeElement.classList.remove("is-open");
+    }
+  });
+</script>
+
+<style is:global>
+  .scroll-padlock-locked {
+    /* Standard way to lock scroll */
+    overflow: hidden;
+
+    /* Reserves space for scrollbar */
+    padding-right: var(--scroll-padlock-scrollbar-width);
+  }
+
+  .btn-theme{
+    background: hsl(var(--gray-dark),1);
+    border: none;
+    cursor: pointer;
+    & svg{
+      cursor: inherit;
+    }
+  }
+</style>

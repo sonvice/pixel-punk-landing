@@ -1,0 +1,90 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+// Supports weights 100-900
+import "@fontsource-variable/montserrat";
+// Supports weights 400-900
+import "@fontsource-variable/orbitron";
+import "../sass/style.scss";
+import {Seo} from 'astro-seo-meta'
+---
+
+<!doctype html>
+<html lang="en" class="custom-scrollbar">
+  <head>
+    <Seo 
+    title={title}
+    description="Landing page Pixel Punk, inteligencia artificial"
+    icon="/favicon.svg"
+    keywords={["website", "IA", "astro", "Inteligencia Artificial"]}
+    facebook={{
+      image: "/cyber-punk.png",
+      url: "https://wilsonmunoz.com/",
+      type: "website",
+  }}
+  twitter={{
+      image: "/cyber-punk.png",
+      site: "@wilvmc",
+      card: "summary",
+  }}
+    />
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+
+    <slot />
+    <div class="halo-effect"></div>
+  </body>
+</html>
+
+<script>
+  import AOS from 'aos/dist/aos';
+  import 'aos/dist/aos.css';
+  AOS.init({
+    offset: 250,        // Desplazamiento para activar la animación (en px)
+  duration: 400,      // Duración de la animación (en ms)
+  easing: 'ease-in-sine', // Función de easing para las animaciones
+  delay: 200,         // Retraso antes de comenzar la animación (en ms)
+  once: false,         // Si la animación debe ejecutarse solo una vez
+  });
+
+  /* Lighthing */
+  document.addEventListener('mousemove', function(e) {
+  const haloEffect = document.querySelector('.halo-effect');
+  
+  // Captura la posición del ratón
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+
+  // Mueve el halo a la posición del ratón
+  haloEffect.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+  haloEffect.style.opacity = 1; // Muestra el efecto de halo
+
+  // Desaparece el halo suavemente después de un pequeño retraso
+  setTimeout(() => {
+    haloEffect.style.opacity = 0;
+  }, 200);
+});
+
+ /* Scroll animation */
+// Selecciona todos los elementos que quieres rotar
+const rotatingElements = document.querySelectorAll('.union');
+
+// Escucha el evento de desplazamiento
+window.addEventListener('scroll', () => {
+  // Calcula la rotación basada en el desplazamiento actual
+  const scrollPosition = window.scrollY; // Cantidad de desplazamiento vertical en píxeles
+  const rotationDegrees = scrollPosition / 5; // Ajusta el factor de división según la sensibilidad que desees
+
+  // Aplica la rotación a cada elemento
+  rotatingElements.forEach((element, index) => {
+    element.style.transform = `rotate(${rotationDegrees}deg)`;
+  });
+});
+</script>

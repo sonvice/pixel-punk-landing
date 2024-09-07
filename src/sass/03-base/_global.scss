@@ -1,0 +1,104 @@
+/* @import "~@fontsource-variable/montserrat";
+@import "~@fontsource-variable/orbitron";  */
+
+:root {
+  --primary-color: var(--red-orange);
+  --secondary-color: var(--sun-yellow);
+  --secondary-color-hsl:var(--sun-yellow-hsl);
+  /*Font*/
+  --ff-orbitron: "Orbitron Variable", sans-serif;
+  --ff-montserrat: "Montserrat Variable", sans-serif;
+  --fw-200: 200;
+  --fw-400: 400;
+  --fw-700: 700;
+  /* Colors */
+  --orange-hsla: 13, 92%, 46%;
+  --white-hsla: 0, 0%, 96%;
+  --white: hsl(0, 0%, 96%);
+  --black-hsla: 0, 0%, 0%;
+  --gray-dark: 0, 0%, 10%;
+  --black: #010101;
+  /*   Sunset Glow */
+  --red-orange: #E1043C; /* Rojo Naranja */
+  --sun-yellow: #FFF62D;/* Amarillo Sol */
+  --sun-yellow-hsl: 44, 87%, 53%;
+  /* Ocean Breeze */
+  --sky-blue-light:#3915f9;/* Azul Cielo Claro */
+  --ocean-blue-dark:#30b5eb;/* Azul Océano Oscuro */
+  --ocean-blue-dark-hsl:197, 82%, 55%;/* Azul Océano Oscuro */
+  /* Forest Canopy */
+  --leaf-green-light:#0deae3; /* Verde Hoja Claro */
+  --forest-green-dark:#0d70ea; /* Verde Bosque Oscuro */
+  --forest-green-dark-hsl:213, 89%, 48%; /* Verde Bosque Oscuro */
+
+  --gradient: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  --gradient-180: linear-gradient(180deg, var(--secondary-color), var(--primary-color));
+  --gradient-270: linear-gradient(270deg, var(--secondary-color), var(--primary-color));
+  --gradient-0: linear-gradient(0deg, var(--secondary-color), var(--primary-color));
+
+}
+* {
+  cursor: url(../assets/svg/cursor.svg), auto;
+}
+
+/* Tema alternativo: por ejemplo, un tema oscuro */
+[data-theme="dark"] {
+  --primary-color: var(--sky-blue-light);
+  --secondary-color: var(--ocean-blue-dark);
+  --secondary-color-hsl:var(--ocean-blue-dark-hsl);
+
+}
+[data-theme="Forest Canopy"] {
+  --primary-color: var(--leaf-green-light);
+  --secondary-color: var(--forest-green-dark);
+  --secondary-color-hsl:var(--forest-green-dark-hsl);
+
+}
+[data-theme="Sunset Glow"] {
+  --primary-color: var(--red-orange);
+  --secondary-color: var(--sun-yellow);
+  --secondary-color-hsl:var(--sun-yellow-hsl);
+
+}
+body {
+  font-family: var(--ff-montserrat);
+  font-size: var(--size-0);
+  background-color: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: var(--fw-bold);
+  text-transform: capitalize;
+}
+
+h1 {
+  font-size: var(--size-4);
+  max-width: 15ch;
+}
+h1,
+h2 {
+  font-family: var(--ff-orbitron);
+}
+h2 {
+  font-size: var(--size-4);
+}
+h3{
+  font-size: var(--size-2);
+}
+a:hover {
+  text-decoration: currentColor;
+}
+
+p {
+  max-width: 56ch;
+  font-family: var(--ff-montserrat);
+}
+
+img {
+  height: auto;
+}

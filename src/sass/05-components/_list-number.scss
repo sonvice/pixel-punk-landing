@@ -1,0 +1,7 @@
+.list-number{
+    &__item{
+        --vertical-alignment:left;
+        --gutter:var(--space-2xs);
+        flex-direction: column;
+    }
+}

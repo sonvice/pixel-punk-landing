@@ -1,0 +1,16 @@
+@use '../01-abstracts/' as b;
+
+.page{
+    &__block {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap:var(--space-l);
+        @include b.breakpoint(md){
+            grid-template-columns: 1fr 1fr;
+        }
+        & h2{
+            text-wrap: pretty;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ciberpunk",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/montserrat": "^5.0.19",
+    "@fontsource-variable/orbitron": "^5.0.19",
+    "aos": "^2.3.4",
+    "astro": "^4.14.2",
+    "astro-icon": "^1.1.1",
+    "astro-seo-meta": "^4.1.1",
+    "sass": "^1.77.8",
+    "scroll-padlock": "^2.4.2",
+    "utopia-core-scss": "^1.1.0"
+  }
+}

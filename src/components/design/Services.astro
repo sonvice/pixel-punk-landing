@@ -1,0 +1,67 @@
+---
+import { services } from "@constants/index";
+import Section from "@components/Secction.astro";
+import Union from "@assets/Union.astro";
+import Speakers from "@assets/Speakers.astro";
+import Flash from "@assets/Flash.astro";
+import Branching from "@assets/Branching.astro";
+---
+
+<section class="services | relative border-horizontal">
+  <div class="container">
+    <Section>
+      <div class="py-space-3xl">
+        <h2 class="fw-700 text-center m-space-auto" data-aos="fade-zoom-in">
+          Immerse Yourself in the Digital <span class="gradient-text">Realm</span>
+        </h2>
+        <p
+          class="text-center m-space-auto mt-space-s"
+          data-aos="fade-zoom-in"
+          data-aos-delay="100"
+        >
+          A realm where advanced technology meets dystopian reality. Our website
+          is your gateway to a universe of neon lights, gritty streets, and
+          cybernetic enhancements.
+        </p>
+        <ul
+          role="list"
+          class="services__list | mt-space-xl d-grid"
+          data-aos="fade-zoom-in"
+          ata-aos-delay="100"
+        >
+          {
+            services.map((item, index) => (
+              <li class="d-flex">
+                <div class="services__icon gradient rounded">
+                  <div class="bg-black p-space-3xs rounded">
+                    {/* Renderiza diferentes componentes basados en item.iconName */}
+                    {(() => {
+                      switch (item.iconName) {
+                        case "speakers":
+                          return <Speakers />;
+                        case "branching":
+                          return <Flash />;
+                        case "flash":
+                          return <Branching />;
+                        default:
+                          return <Speakers />;
+                      }
+                    })()}
+                  </div>
+                </div>
+                <div>
+                  <h3 class="fw-500">{item.title}</h3>
+                  <p class="mt-space-s">{item.content}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <Fragment slot="union">
+        <Union fill="var(--primary-color)" class:list={"union-l absolute"} />
+        <Union fill="var(--secondary-color)" class:list={"union-r absolute"} />
+      </Fragment>
+    </Section>
+  </div>
+</section>

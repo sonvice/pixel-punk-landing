@@ -1,0 +1,19 @@
+---
+interface Props {
+  data: Array<{ sub: string; number: string }>;
+}
+const { data } = Astro.props;
+---
+
+<ul role="list" class="list-number | d-flex p-space-0">
+  {
+    data.map((item) => (
+      <li class="list-number__item d-flex">
+        <p class="gradient-text size-3 d-inline-block">
+          <strong>{item.number}</strong>
+        </p>
+        <p>{item.sub}</p>
+      </li>
+    ))
+  }
+</ul>

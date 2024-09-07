@@ -1,0 +1,30 @@
+.btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 2px;
+    font-size: var(--size-0);
+    span {
+      display: inline-block;
+      border-radius: 0.375rem;
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+    &.primary:hover span{
+      background: var(--black);
+   
+    }
+    &.secondary{
+      span{
+        background: var(--black);
+      }
+    }
+    &.secondary:hover span{
+      background: var(--gradient);
+    }
+  }
+
+
+  
+

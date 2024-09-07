@@ -1,0 +1,23 @@
+ <svg width='60' height='40'>
+      <clipPath id="benefits" clipPathUnits="objectBoundingBox">
+        <path d="M0.079,0 h0.756 a0.079,0.083,0,0,1,0.058,0.026 l0.086,0.096 A0.079,0.083,0,0,1,1,0.179 V0.917 c0,0.046,-0.035,0.083,-0.079,0.083 H0.079 c-0.044,0,-0.079,-0.037,-0.079,-0.083 V0.083 C0,0.037,0.035,0,0.079,0" />
+      </clipPath>
+    </svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="655" height="328" fill="none" viewBox="0 0 655 328">
+  <g filter="url(#a)">
+    <path stroke="url(#b)" d="M20 .5h615c10.77 0 19.5 8.73 19.5 19.5v288c0 10.77-8.73 19.5-19.5 19.5H20C9.23 327.5.5 318.77.5 308V20C.5 9.23 9.23.5 20 .5Z"/>
+  </g>
+  <defs>
+    <linearGradient id="b" x1="655" x2="0" y1="288.336" y2="288.336" gradientUnits="userSpaceOnUse">
+      <stop stop-color="red"/>
+      <stop offset="1" stop-color="red"/>
+    </linearGradient>
+    <filter id="a" width="757.8" height="430.8" x="-51.4" y="-51.4" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feGaussianBlur in="BackgroundImageFix" stdDeviation="25.7"/>
+      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_175_3"/>
+      <feBlend in="SourceGraphic" in2="effect1_backgroundBlur_175_3" result="shape"/>
+    </filter>
+  </defs>
+</svg>

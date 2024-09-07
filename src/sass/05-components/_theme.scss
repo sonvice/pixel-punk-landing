@@ -1,0 +1,46 @@
+.theme{
+    transition: max-height .4s cubic-bezier(.4,0,.2,1);
+    overflow: hidden;
+    max-height: 0;
+    background-color: hsl(var(--gray-dark),.5);
+    &__box{
+        --horizontal-alignment:center;
+        flex-direction: column;
+        --gutter:0;
+    }
+    &__list{
+    --gutter:var(--space-s);
+    }
+    &__item{
+        display: inline-block;
+    }
+    &__btn{
+        display: inline-block;
+        border: none;
+        color: var(--white);
+        background: hsl(var(--gray-dark),5);
+    }
+    &__btn.active{
+        box-shadow: 0 0 0px 3px var(--primary-color) !important;
+    }
+    &.is-open{
+        max-height: 14rem;
+    }
+
+    &__primary,&__secondary{
+        width: 1.5rem;
+        height: 1.5rem;
+        display: inline-block;
+        border: 1px solid var(--white);
+
+    }
+    &__primary{
+        background-color: var(--primary-color);
+    }
+    &__secondary{
+        background-color: var(--secondary-color);
+    }
+    &__palette{
+        --gutter:var(--space-3xs);
+    }
+}

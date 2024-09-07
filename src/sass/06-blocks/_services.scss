@@ -1,0 +1,19 @@
+.services{
+    & h2{
+        max-width: 15ch;
+    }
+
+    &__list{
+        padding: 0;
+        --gap:var(--space-xl);
+        & li{
+           flex-wrap: nowrap;
+           --vertical-alignment:start;
+        }
+    }
+    &__icon{
+        
+        flex-shrink: 0;
+        padding: 1px;
+    }
+}

@@ -1,0 +1,62 @@
+@use "./../01-abstracts/" as b;
+
+.line {
+  &-l,
+  &-r {
+    pointer-events: none;
+    width: 1px;
+
+    top: 0;
+    bottom: 0;
+  }
+  &-l {
+    margin-left: -1rem;
+    left: 0;
+    background-image: var(--gradient-0);
+    @include b.breakpoint(lg) {
+      margin-left: -3rem;
+    }
+  }
+  &-r {
+    margin-right: -1rem;
+    right: 0;
+    background-image: var(--gradient-180);
+    @include b.breakpoint(lg) {
+      margin-right: -3rem;
+    }
+  }
+}
+
+.union{
+  display: inline-block;
+  transition: transform 0.1s ease-out;
+}
+
+.union-l,
+.union-r {
+  bottom: -30px;
+  display: none;
+  z-index: 5;
+  
+  @include b.breakpoint(lg){
+    pointer-events: none;
+    display: block;
+  }
+}
+
+.union-l {
+  left: calc(-1rem - 30px);
+
+  @include b.breakpoint(lg) {
+    left: calc(-3rem - 30px);
+  }
+}
+.union-r {
+  right: calc(-1rem - 29px);
+
+  @include b.breakpoint(lg) {
+    right: calc(-3rem - 29px);
+  }
+}
+
+

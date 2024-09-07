@@ -1,0 +1,65 @@
+
+
+@media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+    
+        .fadeIn{
+           animation: fadeIn both; 
+           animation-timeline: view();
+           animation-range: 25vh 75vh;
+        }
+    
+    }
+
+}
+
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+       transform: scale(.5);
+    }to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }
+
+  @keyframes bg-animation {
+    0% {background-position: left}
+    50% {background-position: right}
+    100% {background-position: left}
+  }
+
+  @keyframes scale-animation {
+    0% {
+      transform: scale(0.1); /* Círculo pequeño al inicio */
+      opacity: 0.5; /* Ligera transparencia al inicio */
+    }
+    50% {
+      transform: scale(1.2); /* Círculo crece más allá del tamaño original */
+      opacity: 0.3; /* Aumenta un poco la transparencia en el punto medio */
+    }
+    100% {
+      transform: scale(1.5); /* Círculo más grande que el tamaño original */
+      opacity: 0; /* Completamente transparente al final */
+    }
+  }
+
+  @keyframes full-rotate {
+    0% {
+      transform: rotate(0turn); /* Estado inicial sin rotación */
+    }
+    100% {
+      transform: rotate(2turn); /* Rotación completa de 2 giros */
+    }
+  }

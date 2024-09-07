@@ -1,0 +1,58 @@
+---
+import ButtonTheme from '@components/ButtonTheme.astro'
+
+---
+
+<div class="theme | relative">
+  <div class="container">
+    <div class="theme__box | pt-space-s d-flex">
+          <h3 class="size--1 fw-700 uppercase">select theme</h3>
+          <ul role="list" class="theme__list | d-flex pl-space-0">
+           <ButtonTheme theme="dark"/>
+           <ButtonTheme theme="Forest Canopy"/>
+           <ButtonTheme theme="Sunset Glow"/>
+          </ul>
+        </div>
+  </div>
+</div>
+
+<script>
+    // Seleccionar todos los botones de cambio de tema
+    const themeButtons = document.querySelectorAll(".theme__btn[data-theme]");
+  
+    // Función para activar el botón correspondiente al tema seleccionado
+    function activateButton(themeName) {
+      // Primero, remover la clase 'active' de todos los botones
+      themeButtons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+  
+      // Luego, añadir la clase 'active' al botón correspondiente
+      const activeButton = document.querySelector(`.theme__btn[data-theme="${themeName}"]`);
+      if (activeButton) {
+        activeButton.classList.add("active");
+      }
+    }
+  
+    // Función para establecer el tema
+    function setTheme(themeName) {
+      document.documentElement.setAttribute("data-theme", themeName);
+      localStorage.setItem("theme", themeName); // Guardar la preferencia del usuario
+      activateButton(themeName); // Activar el botón actual
+    }
+  
+    // Función para mantener el tema seleccionado después de recargar la página
+    (function () {
+      const savedTheme = localStorage.getItem("theme") || "dark"; // 'dark' es el tema predeterminado
+      setTheme(savedTheme); // Establecer el tema guardado
+    })();
+  
+    // Añadir un evento 'click' a cada botón
+    themeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const theme = button.getAttribute("data-theme"); // Obtener el tema del atributo data-theme
+        setTheme(theme); // Llamar a la función para cambiar el tema
+      });
+    });
+  </script>
+  

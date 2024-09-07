@@ -1,0 +1,12 @@
+---
+interface Props {
+  text: string;
+  bg?: string;
+  type:string;
+}
+const { text,  type } = Astro.props;
+---
+
+<button class=`btn ${type} | fw-500 size--1 text-white gradient`>
+  <span class=`py-space-2xs px-space-xs`>{text}</span>
+</button>

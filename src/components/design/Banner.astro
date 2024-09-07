@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import { cyberPunkUrban } from "@assets/index";
+import { bannerList } from "@constants/index";
+import { Icon } from "astro-icon/components";
+import Section from "@components/Secction.astro";
+import Union from "@assets/Union.astro";
+---
+
+<section class="banner | relative border-horizontal">
+  <div class="container">
+    <Section>
+      <div class="banner__grid">
+        <div class="banner__box-img">
+          <Image
+            src={cyberPunkUrban}
+            alt="Cyber Punk Urban"
+            width={cyberPunkUrban.width / 2}
+          />
+        </div>
+        <div class="banner__info | p-space-m">
+          <div class="flow" data-aos="fade-up">
+            <h2 class="fw-700">
+              Welcome! Immerse Yourself <br /> in the Digital Frontier
+            </h2>
+            <p>
+              Our website is your gateway to a universe of neon lights, gritty
+              streets, and cybernetic enhancements. Explore the high-tech,
+              low-life world where the lines between humanity and machinery
+              blur.
+            </p>
+          </div>
+          <div
+            class="banner__list-block | relative"
+            data-aos="fade-down"
+          >
+          <div class="banner__list-transparent | rounded-md absolute"></div>
+          <div class="banner__list-border | absolute">
+            <div class="gradient absolute"></div>
+          </div>
+            <ul class="banner__list | m-space-0 rounded-md">
+              {
+                bannerList.map((item) => (
+                  <li class="d-flex p-space-s">
+                    <p>{item.text}</p>
+                    <Icon name={item.iconName} size={32} />
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      <Fragment slot="union">
+        <Union fill="var(--primary-color)" class:list={"union-l absolute"} />
+        <Union fill="var(--secondary-color)" class:list={"union-r absolute"} />
+      </Fragment>
+    </Section>
+  </div>
+</section>

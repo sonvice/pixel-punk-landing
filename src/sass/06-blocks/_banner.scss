@@ -1,0 +1,105 @@
+@use "../01-abstracts/" as b;
+.banner {
+  &__grid {
+    display: grid;
+    align-items: center;
+  }
+  &__box-img {
+    z-index: -1;
+    grid-row: 1 / 2;
+    grid-column: 1;
+    margin-inline: -1rem;
+    height: 100%;
+    @include b.breakpoint(lg) {
+      margin-inline: -3rem;
+    }
+    & img {
+      height: 100%;
+      object-fit: cover;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background: hsla(var(--black-hsla), 0.7);
+      margin-inline: -1rem;
+      @include b.breakpoint(lg) {
+        margin-inline: -3rem;
+      }
+    }
+  }
+  &__info {
+    grid-column: 1;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+    align-items: center;
+    gap: 1rem;
+
+    & h2 {
+      max-width: 12ch;
+    }
+
+    @include b.breakpoint(lg) {
+      grid-template-columns: 60% 40%;
+    }
+  }
+
+  &__list-block {
+    max-width: 430px;
+    padding: 1px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: var(--space-s);
+    @include b.breakpoint(md) {
+      padding: var(--space-xl);
+    }
+    & li {
+      position: relative;
+      padding-left: var(--space-m);
+      --horizontal-alignment: space-between;
+      &::before {
+        content: "■"; /* Carácter para el cuadrado */
+        position: absolute;
+        font-size: var(--size-1);
+        line-height: 1;
+        left: 0;
+        color: var(
+          --primary-color
+        ); /* Color por defecto, que luego puedes personalizar */
+      }
+      &:nth-child(odd)::before {
+        color: var(--secondary-color);
+      }
+
+      p {
+        max-width: 10ch;
+      }
+      & svg {
+        transition: .2s ease;
+        }
+    }
+    & li:hover svg{
+        transform: translateX(8px);
+        stroke: var(--primary-color);
+    }
+  }
+
+  &__list-border{
+    inset: 0;
+    clip-path: url(#rect2);
+    & > div{
+        inset: 0;
+    }
+    }
+
+    &__list-transparent{
+        inset: 0;
+        background-color: hsla(var(--white-hsla), 0.1);
+        backdrop-filter: blur(10px);
+        z-index: -1;
+    }
+}

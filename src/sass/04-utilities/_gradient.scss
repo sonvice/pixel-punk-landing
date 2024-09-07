@@ -1,0 +1,34 @@
+
+@property --gradient-pos {
+    syntax: "<percentage>"; /* Tipo de dato permitido: porcentaje */
+    inherits: false; /* No hereda el valor */
+    initial-value: 0%; /* Valor inicial de la propiedad */
+  }
+
+.gradient{
+background-image: var(--gradient);
+background-size: 200%;
+animation: bg-animation 6s infinite ; 
+}
+.gradient-inverse{
+    &::after,&::before{
+        content: '';
+        position: absolute;
+        border-radius: 1.25rem;
+        z-index: -1;
+        inset: 0;
+        background: conic-gradient(
+  from var(--angle),
+  #F0B71F,
+  #F3A61A, /* Color intermedio más cerca de #F0B71F */
+  #F48C15, /* Color intermedio hacia rojo */
+  #F56F12, /* Color intermedio más cerca de #E03609 */
+  #E03609
+);
+        animation: 6s spin linear infinite;
+    }
+    &::after{
+        filter: blur(6px);
+        opacity: 0.5;
+    }
+}

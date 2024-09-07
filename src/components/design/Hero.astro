@@ -1,0 +1,60 @@
+---
+import { cyberPunkWarrior, future,cyberGradient } from "@assets/index";
+import Button from "@components/Button.astro";
+import { Image } from "astro:assets";
+import Section from "@components/Secction.astro";
+import Card from "@components/Card.astro";
+import Union from "@assets/Union.astro"
+import Pointer from '@components/Poiinter.astro';
+---
+<section class="hero | relative border-horizontal">
+    <div class="container">
+      <Section>
+        <h1 class="text-big fw-700 pt-space-2xl text-center" data-aos="fade-up" data-aos-delay="100">Pixel Punk</h1>
+        <div class="hero__box">
+          <div class="warrior | relative gradient-black" data-aos="zoom-in">
+            <Image
+              quality={90}
+              src={cyberPunkWarrior}
+              width={cyberPunkWarrior.width / 2}
+              alt="Cyber Punk Warrior"
+            />
+            <div class="warrior__gradient absolute">
+              <Image src={cyberGradient} alt="Gradient"/>
+            </div>
+          </div>
+          <div class="text1 | flow">
+            <h2 class="fw-200 size-3">News and <span class="fw-500">Happenings</span></h2>
+            <p>
+              Dive into a futuristic realm where advanced technology merges with gritty reality, and the boundary between human and machine becomes indistinct.
+            </p>
+            <Button text="Read More" type="primary" />
+          </div>
+          <div class="text2 | flow relative">
+            <h3>Tales & Legends</h3>
+            <p class="size-0">Immerse yourself in engaging stories set against a dystopian backdrop.</p>
+            <Pointer></Pointer>
+          </div>
+    
+          <Card title="86,285K+" image={future} subTitle="Embrace Tomorrow" content="Discover the advanced, gritty realm where the boundaries between"></Card>
+          <div class="text3 | flow">
+            <h2 class="fw-200 size-3">Creativity and <span class="fw-500">Aesthetics</span></h2>
+            <p>
+              Marvel at breathtaking visuals and concept art that capture the essence of cyberpunk
+            </p>
+          </div>
+          <div class="number | gradient relative rounded-md">
+            <div class="number__box | p-space-xs py-space-m d-flex rounded-md">
+                <p class="size-5 gradient-text"><strong>17+</strong></p>
+                <h3 class="fw-500">Decades of <br> Expertise</h3>
+            </div>
+          </div>
+        </div>
+        <Fragment slot="union">
+          <Union fill="var(--primary-color)" class:list={"union-l absolute"} />
+          <Union fill="var(--secondary-color)" class:list={"union-r absolute"} />
+          </Fragment>
+      </Section>
+    </div>
+
+</section>

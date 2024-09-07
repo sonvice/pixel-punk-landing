@@ -1,0 +1,19 @@
+---
+import { questions } from "@constants/index";
+
+
+---
+<div class="faqs">
+    <div class="flow">
+        <h2 class="fw-700 text-center m-space-auto"  data-aos="fade-zoom-in">Commonly Inquired <span class="gradient-text">Queries</span></h2>
+        <p class="text-center m-space-auto"  data-aos="fade-zoom-in" data-aos-delay="100">A realm where advanced technology meets dystopian reality. Our website is your gateway to a universe of neon lights, gritty streets, and cybernetic enhancements. </p>
+    </div>
+    <ul class="faqs__list | m-space-0 mt-space-2xl pb-space-3xl" data-aos="fade-zoom-in" data-aos-delay="200">
+        {questions.map((item)=> (
+            <li>
+                <h3>{item.title}</h3>
+                <p class=" relative border-horizontal pb-space-m mt-space-l">{item.content}</p>
+            </li>
+        ) )}
+    </ul>
+</div>

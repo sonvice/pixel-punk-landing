@@ -1,0 +1,55 @@
+@use '../01-abstracts/' as s;
+
+@each $class-name, $value in s.$spaces {
+    // Margin
+    .m-#{$class-name} {
+      margin: $value;
+    }
+    .mt-#{$class-name} {
+      margin-top: $value;
+    }
+    .mr-#{$class-name} {
+      margin-right: $value;
+    }
+    .mb-#{$class-name} {
+      margin-bottom: $value;
+    }
+    .ml-#{$class-name} {
+      margin-left: $value;
+    }
+    // Margin en bloque
+    .my-#{$class-name} {
+      margin-block: $value;
+    }
+    // Margin en linea
+    .mx-#{$class-name} {
+      margin-inline: $value;
+    }
+  
+    // Padding
+    .p-#{$class-name} {
+      padding: $value;
+    }
+    .pt-#{$class-name} {
+      padding-top: $value;
+    }
+    .pr-#{$class-name} {
+      padding-right: $value;
+    }
+    .pb-#{$class-name} {
+      padding-bottom: $value;
+    }
+    .pl-#{$class-name} {
+      padding-left: $value;
+    }
+  
+    // Padding en bloque
+    .py-#{$class-name} {
+      padding-block: $value;
+    }
+  
+    // Padding en línea
+    .px-#{$class-name} {
+      padding-inline: $value;
+    }
+  }

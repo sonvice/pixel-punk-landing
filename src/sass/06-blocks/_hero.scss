@@ -1,0 +1,127 @@
+@use "../01-abstracts/" as b;
+
+.hero {
+  position: relative;
+  & h1 {
+    @include b.breakpoint-down(lg) {
+      font-size: clamp(4.5rem, 3.989rem + 2.56vw, 5.625rem);
+    }
+  }
+  &__box {
+    padding-bottom: var(--space-3xl);
+    display: grid;
+    margin-block-start: -2rem;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "warrior  warrior warrior warrior"
+      "warrior warrior warrior warrior"
+      "text1 text1 text1 ...."
+      "card card card card";
+    @include b.breakpoint(md) {
+      margin-block-start: -4rem;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "warrior  warrior warrior warrior warrior warrior"
+        "warrior warrior warrior warrior warrior warrior"
+        "text1 text1 text1 .... text3 text3"
+        "text1 text1 text1 .... text3 text3"
+        "card card card card number number";
+    }
+    @include b.breakpoint(lg) {
+      margin-block-start: -7rem;
+      grid-template-columns: repeat(15, 1fr);
+      grid-template-areas:
+        ".... .... .... .... warrior warrior warrior warrior warrior warrior warrior warrior warrior .... .... "
+        "text2 text2 .... .... warrior warrior warrior warrior warrior warrior warrior warrior warrior text1 text1"
+        "....  ....  .... .... warrior warrior warrior warrior warrior warrior warrior warrior warrior .... .... "
+        "card card card card card card card ....  text3 text3 text3 .... number number number ";
+    }
+
+    & .warrior {
+      grid-area: warrior;
+      position: relative;
+      @include b.breakpoint(lg) {
+        grid-column: 5 / 13;
+        grid-row: 1 / 4;
+      }
+
+      & img {
+        margin: auto;
+        width: 70%;
+        @include b.breakpoint(lg) {
+          width: auto;
+        }
+      }
+      &__gradient {
+        inset: 0;
+        z-index: -1;
+      }
+    }
+
+    & .text1 {
+      grid-area: text1;
+      margin-bottom: var(--space-m);
+      @include b.breakpoint(lg) {
+        margin-left: -3rem;
+        text-align: right;
+        margin-bottom: 0;
+        grid-column: 13 / 16;
+        grid-row: 2 / 3;
+     
+      }
+
+      & h2,
+      p {
+        font-family: var(--ff-montserrat);
+      }
+    }
+
+    & .text2 {
+      grid-area: text2;
+      display: none;
+      @include b.breakpoint(lg) {
+        display: block;
+        align-self: center;
+      }
+    }
+
+    & .text3 {
+      grid-area: text3;
+      align-self: end;
+      z-index: 1;
+      display: none;
+      & h2 {
+        font-family: var(--ff-montserrat);
+      }
+
+      @include b.breakpoint(md) {
+        margin-bottom: var(--space-m);
+        display: block;
+      }
+      @include b.breakpoint(lg) {
+        margin-bottom: 0;
+      }
+    }
+
+    & .card {
+      grid-area: card;
+    }
+
+    & .number {
+      grid-area: number;
+      display: none;
+      align-self: end;
+
+      &__box{
+        p{
+          line-height: 1;
+        }
+      }
+
+      @include b.breakpoint(md) {
+        display: block;
+      }
+    }
+  }
+}

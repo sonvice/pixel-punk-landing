@@ -1,0 +1,7 @@
+.gradient-text {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    background-size: 200%;
+    animation: bg-animation 6s infinite ;
+}

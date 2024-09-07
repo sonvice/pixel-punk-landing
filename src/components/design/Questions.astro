@@ -1,0 +1,18 @@
+---
+import Faqs from "@components/design/Faqs.astro";
+import Page from "@components/design/Page.astro";
+import Section from '@components/Secction.astro';
+import Union from "@assets/Union.astro";
+---
+<section class="relative border-horizontal">
+    <div class="container">
+        <Section>
+            <Page></Page>
+            <Faqs></Faqs>
+            <Fragment slot="union">
+                <Union fill="var(--primary-color)" class:list={"union-l absolute"} />
+                <Union fill="var(--secondary-color)" class:list={"union-r absolute"} />
+            </Fragment>
+        </Section>
+    </div>
+</section>

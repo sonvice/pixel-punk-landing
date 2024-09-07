@@ -1,0 +1,61 @@
+.pointer{
+    top: 0;
+    right: 0;
+    z-index: 1;
+    &__horizontal{
+        width: 10rem;
+        background: var(--primary-color);
+        height: 1px;
+    }
+    &__vertical{
+        width: 12.5rem;
+        background: var(--gradient-270);
+        transform: rotate(90deg) translateX(50%) translateY(50%);
+        height: 1px;
+        left: calc(50% - 20px);
+    }
+    &__circle1{
+        width: 28px;
+        height: 28px;
+        background-color: var(--secondary-color);
+        bottom: -14px;
+        right: 0;
+    }
+    &__circle2{
+        width: 56px;
+        height: 56px;
+        background-color: hsla(var(--secondary-color-hsl),.5);
+        bottom: -28px;
+        right: -14px;
+        transform: scale(.1);
+        opacity: 1;
+        animation: scale-animation ease-out 1.2s .5s infinite;
+        
+    }
+
+    &__circle3{
+        width: 86px;
+        height: 86px;
+        background-color: hsla(var(--secondary-color-hsl),.5);
+        bottom: -43px;
+        right: -29px;
+        transform: scale(.1);
+        opacity: 1;
+        animation: scale-animation ease-out 1.2s infinite;
+    }
+}
+
+
+.halo-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2); /* Círculo difuso suave */
+    box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.1); /* Halo de luz suave */
+    pointer-events: none; /* Permite hacer clic en los elementos debajo */
+    transition: transform 0.1s ease-out, opacity 0.2s ease-out; /* Transiciones para suavizar el efecto */
+    opacity: 0; /* Comienza invisible */
+  }

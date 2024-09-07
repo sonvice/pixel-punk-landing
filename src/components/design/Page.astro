@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import { futuristMusician } from "@assets/index";
+import Button from "@components/Button.astro";
+
+---
+<div class="page">
+
+    <div class="page__block | py-space-3xl" >
+        <div  data-aos="fade-down">
+            <Image class="rounded-md" src={futuristMusician} width={futuristMusician.width / 2} alt="Futurist Musician"></Image>
+        </div>
+        <div class="flow" data-aos="fade-up">
+            <h2 class="fw-700">Your <span class="gradient-text">Gateway to a Rough</span>, Technology-Fueled Tomorrow.</h2>
+            <p>A realm where advanced technology meets dystopian reality. Our website is your gateway to a universe of neon lights, gritty streets, and cybernetic enhancements. </p>
+            <div class="d-flex">
+                <Button text="Read More" type="primary"></Button>
+                <Button text="Learn More" type="secondary"></Button>
+            </div>
+        </div>
+    </div>
+</div>

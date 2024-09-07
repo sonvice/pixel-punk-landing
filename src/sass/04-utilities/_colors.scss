@@ -1,0 +1,27 @@
+@use "../01-abstracts/tokens" as color;
+
+/* Generación de clases de utilidad usando variables CSS */
+@each $class-name, $var-name in color.$neutral {
+  //Background
+  .bg-#{$class-name} {
+    background-color: var(#{$var-name});
+  }
+  
+  //Text color
+  .text-#{$class-name} {
+    color: var(#{$var-name});
+  }
+}
+
+// Para colores primarios
+@each $class-name, $var-name in color.$primary {
+  //Background
+  .bg-#{$class-name} {
+    background-color: var(#{$var-name});
+  }
+  
+  //Text color
+  .text-#{$class-name} {
+    color: var(#{$var-name});
+  }
+}
