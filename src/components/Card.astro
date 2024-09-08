@@ -18,7 +18,7 @@ const { content, title, subTitle, image } = Astro.props;
   </div>
   <div class="card__box | rounded-md p-space-l d-flex">
     <div class="card__img | rounded overflow-h">
-      <Image src={image} alt="Future" width={image.width / 2} />
+      <Image src={image} alt="Future" width={image.width} />
     </div>
     <div class="flow">
      {title ? <p class="size-4 gradient-text"><strong>{title}</strong></p> : ''} 

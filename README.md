@@ -1,6 +1,6 @@
 # Pixel Punk 🤖
 
-![Cyber Punk Banner](https://i.ibb.co/ZTjHdY9/theme.png)
+![Cyber Punk Banner](https://raw.githubusercontent.com/sonvice/pixel-punk-landing/main/public/theme.png)
 <div align="center">
 <div>
     <img src="https://img.shields.io/badge/-Figma-black?style=for-the-badge&logoColor=white&logo=figma&color=F24E1E" alt="Figma" />
