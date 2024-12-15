@@ -12,10 +12,8 @@ const { content, title, subTitle, image } = Astro.props;
 ---
 
 <div class="card | relative">
-  <div class="card__transparent | rounded-md absolute"></div>
-  <div class="card__border | absolute">
-    <div class="card__gradient | gradient absolute"></div>
-  </div>
+  <div class="card__transparent | gradient rounded-md absolute"></div>
+
   <div class="card__box | rounded-md p-space-l d-flex">
     <div class="card__img | rounded overflow-h">
       <Image src={image} alt="Future" width={image.width} />

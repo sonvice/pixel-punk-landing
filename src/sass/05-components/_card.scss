@@ -31,7 +31,6 @@ inherits: false;
             inset: 0;
             clip-path: url(#rect1);
             z-index: 1;
-    
     }
     }
 
@@ -39,6 +38,7 @@ inherits: false;
         flex-wrap: nowrap;
         --gutter:var(--space-m);
         --vertical-alignment:stretch;
+        background-color: hsla(var(--gray-dark), 1);
     }
 
     &__img{
